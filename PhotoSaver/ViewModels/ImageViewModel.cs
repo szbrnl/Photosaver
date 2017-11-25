@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -17,7 +19,7 @@ namespace PhotoSaver.ViewModels
             get => imageSource;
             
         }
-
+        public ICommand ImageSelectedCommand { get; set; }
         public bool ImageSelected
         {
             get => imageSelected;
@@ -31,12 +33,10 @@ namespace PhotoSaver.ViewModels
             }
         }
 
-
-
         private ImageSource imageSource;
 
         private bool imageSelected;
-
+        
 
         public ImageViewModel()
         {
@@ -48,6 +48,13 @@ namespace PhotoSaver.ViewModels
         {
             imageSource = new BitmapImage(new Uri(image.ImagePath));
             imageSelected = false;
+
+            ImageSelectedCommand = new RelayCommand(param =>
+            {
+                ((ImageViewModel)param).ImageSelected ^= true;
+                MessageBox.Show("asd");
+                MessageBox.Show(((ImageCollectionViewModel) Application.Current.MainWindow.DataContext).ImagesCollection[0].ImageSelected.ToString());
+            });
         }
 
 

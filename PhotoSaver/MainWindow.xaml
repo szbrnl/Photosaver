@@ -26,7 +26,12 @@
                 <DataTemplate>
                     <Grid>
                         <Border BorderBrush="Red" BorderThickness="5" Margin="10 5">
-                            <Image Source="{Binding ImageSource}"  Width="300" Margin="0 0"></Image>
+                            <Image Source="{Binding ImageSource}"  Width="300" Margin="0 0">
+                                <Image.InputBindings>
+                                    <!--<MouseBinding MouseAction="LeftClick" Command="{Binding Source={x:Static Application.Current}, Path=MainWindow.DataContext.ImageSelectedCommand}" CommandParameter="{Binding}"/>-->
+                                    <MouseBinding MouseAction="LeftClick" Command="{Binding ImageSelectedCommand}" CommandParameter="{Binding}"/>
+                                </Image.InputBindings>
+                            </Image>
                         </Border>
                     </Grid>
                 </DataTemplate>
