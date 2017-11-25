@@ -14,12 +14,15 @@ namespace PhotoSaver.ViewModels
 {
     public class ImageViewModel : INotifyPropertyChanged
     {
+
+        #region Public Properties
+
         public ImageSource ImageSource
         {
             get => imageSource;
 
         }
-        public ICommand ImageSelectedCommand { get; set; }
+
         public bool ImageSelected
         {
             get => imageSelected;
@@ -33,12 +36,17 @@ namespace PhotoSaver.ViewModels
             }
         }
 
+        #endregion
+
+        #region Private Members
+
         private ImageSource imageSource;
 
         private bool imageSelected;
 
+        #endregion
 
-
+        #region Constructors
 
         public ImageViewModel()
         {
@@ -57,6 +65,23 @@ namespace PhotoSaver.ViewModels
             });
         }
 
+        #endregion
+
+        #region Commands
+
+        /// <summary>
+        /// Toggle ImageSelect value
+        /// </summary>
+        public ICommand ImageSelectedCommand { get; set; }
+
+        /// <summary>
+        /// Displays selected photo in full resolution
+        /// </summary>
+        public ICommand ShowImageCommand { get; set; }
+
+        #endregion
+
+        #region PropertyChanged Stuff
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -64,5 +89,8 @@ namespace PhotoSaver.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        #endregion
+
     }
 }
