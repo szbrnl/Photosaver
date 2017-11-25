@@ -6,6 +6,11 @@
         xmlns:local="clr-namespace:PhotoSaver"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1300">
+
+    <!--<Window.Resources>
+        <converters:BoolToBorderStyleConverter x:Key="BoolToBorderStyleConverter" />
+    </Window.Resources>-->
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -25,7 +30,7 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <Border BorderBrush="Red" BorderThickness="5" Margin="10 5">
+                        <Border Style="{StaticResource ImageBorder}" Margin="10 5" >
                             <Image Source="{Binding ImageSource}"  Width="300" Margin="0 0">
                                 <Image.InputBindings>
                                     <!--<MouseBinding MouseAction="LeftClick" Command="{Binding Source={x:Static Application.Current}, Path=MainWindow.DataContext.ImageSelectedCommand}" CommandParameter="{Binding}"/>-->

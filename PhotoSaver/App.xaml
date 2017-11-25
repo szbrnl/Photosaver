@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:PhotoSaver"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+         <ResourceDictionary Source="Styles/Dictionary1.xaml"/>
     </Application.Resources>
 </Application>

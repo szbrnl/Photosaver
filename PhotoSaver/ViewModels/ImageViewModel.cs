@@ -17,7 +17,7 @@ namespace PhotoSaver.ViewModels
         public ImageSource ImageSource
         {
             get => imageSource;
-            
+
         }
         public ICommand ImageSelectedCommand { get; set; }
         public bool ImageSelected
@@ -36,12 +36,14 @@ namespace PhotoSaver.ViewModels
         private ImageSource imageSource;
 
         private bool imageSelected;
-        
+
+
+
 
         public ImageViewModel()
         {
             imageSource = new BitmapImage(new Uri(new FileInfo(Environment.ExpandEnvironmentVariables("%AppData%") + "\\..\\Local\\Packages\\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\\LocalState\\Assets\\944c1cd97389f17384f9ef0511d165279253af51610bee9dfc35db326a9db2cb").FullName));
-            
+
         }
 
         public ImageViewModel(Image image)
@@ -52,8 +54,6 @@ namespace PhotoSaver.ViewModels
             ImageSelectedCommand = new RelayCommand(param =>
             {
                 ((ImageViewModel)param).ImageSelected ^= true;
-                MessageBox.Show("asd");
-                MessageBox.Show(((ImageCollectionViewModel) Application.Current.MainWindow.DataContext).ImagesCollection[0].ImageSelected.ToString());
             });
         }
 
