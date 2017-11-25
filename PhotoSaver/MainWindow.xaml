@@ -34,7 +34,8 @@
                             <Image Source="{Binding ImageSource}"  Width="300" Margin="0 0">
                                 <Image.InputBindings>
                                     <!--<MouseBinding MouseAction="LeftClick" Command="{Binding Source={x:Static Application.Current}, Path=MainWindow.DataContext.ImageSelectedCommand}" CommandParameter="{Binding}"/>-->
-                                    <MouseBinding MouseAction="LeftClick" Command="{Binding ImageSelectedCommand}" CommandParameter="{Binding}"/>
+                                    <MouseBinding MouseAction="RightClick" Command="{Binding ImageSelectedCommand}" CommandParameter="{Binding}"/>
+                                    <MouseBinding MouseAction="LeftClick" Command="{Binding ShowImageCommand}" CommandParameter="{Binding}"/>
                                 </Image.InputBindings>
                             </Image>
                         </Border>
