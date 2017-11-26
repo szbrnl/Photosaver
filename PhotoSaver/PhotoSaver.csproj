@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FileSaver.cs" />
     <Compile Include="ImageCollection.cs" />
     <Compile Include="ImageSeeker.cs" />
     <Compile Include="RelayCommand.cs" />

@@ -40,6 +40,8 @@ namespace PhotoSaver.ViewModels
                 {
                     List<ImageViewModel> imgs = imageCollection.Where((p,q) => p.ImageSelected == true).ToList();
                     imgs.ForEach(p=>p.ImageSelected=false);
+
+                    FileSaver.SavePhotos(imgs, "");
                 });
         }
 

@@ -36,6 +36,8 @@ namespace PhotoSaver.ViewModels
             }
         }
 
+        public string ImagePath { get; set; }
+
         #endregion
 
         #region Private Members
@@ -58,6 +60,8 @@ namespace PhotoSaver.ViewModels
         {
             imageSource = new BitmapImage(new Uri(image.ImagePath));
             imageSelected = false;
+            ImagePath = image.ImagePath;
+
 
             ImageSelectedCommand = new RelayCommand(param =>
             {
