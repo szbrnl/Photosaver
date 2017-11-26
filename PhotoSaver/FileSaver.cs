@@ -5,7 +5,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Win32;
 using PhotoSaver.ViewModels;
+using System.IO;
+using System.Windows;
 
 namespace PhotoSaver
 {
@@ -13,11 +16,11 @@ namespace PhotoSaver
     {
         public static void SavePhotos(List<ImageViewModel> images, string path)
         {
-            path = "C:\\Nowyfolderhehe\\";
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.ShowDialog();
+            path = dialog.FileName;    
 
-            int number = 0;
-            Directory.CreateDirectory(path);
-
+            int number = 0;  
             foreach (var imageViewModel in images)
             {
                 Bitmap bmp = new Bitmap(imageViewModel.ImagePath);
