@@ -33,7 +33,24 @@ namespace PhotoSaver.ViewModels
             imageCollection = new ObservableCollection<ImageViewModel>(
                 new ImageCollection(ImageSeeker.GetImagesFromAppData()).Images.Select(
                     image => new ImageViewModel(image)));
+
+
+            SaveButtonClickedCommand = new RelayCommand(
+                param =>
+                {
+                    List<ImageViewModel> imgs = imageCollection.Where((p,q) => p.ImageSelected == true).ToList();
+                    imgs.ForEach(p=>p.ImageSelected=false);
+                });
         }
+
+
+
+
+        public ICommand SaveButtonClickedCommand { get; set; }
+
+
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
