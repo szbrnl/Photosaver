@@ -35,6 +35,7 @@
                                 <Image.InputBindings>
                                     <!--<MouseBinding MouseAction="LeftClick" Command="{Binding Source={x:Static Application.Current}, Path=MainWindow.DataContext.ImageSelectedCommand}" CommandParameter="{Binding}"/>-->
                                     <MouseBinding MouseAction="RightClick" Command="{Binding ImageSelectedCommand}" CommandParameter="{Binding}"/>
+                                    <MouseBinding MouseAction="RightDoubleClick" Command="{Binding ImageSelectedCommand}" CommandParameter="{Binding}"/>
                                     <MouseBinding MouseAction="LeftClick" Command="{Binding ShowImageCommand}" CommandParameter="{Binding}"/>
                                 </Image.InputBindings>
                             </Image>
@@ -48,6 +49,7 @@
             <StackPanel Grid.Column="1" MaxWidth="200">
 
                 <TextBlock Text="Filtrowanie, informacje, wybór ścieżki do zapisu i takie tam" TextWrapping="Wrap"/>
+                <Button Content="Save Selected" Command="{Binding SaveButtonClickedCommand}"/>
             </StackPanel>
         </Border>
 
