@@ -48,7 +48,7 @@
         <Border Grid.Column="1" BorderBrush="Red" BorderThickness="5">
             <StackPanel Grid.Column="1" MaxWidth="200">
 
-                <TextBlock Text="Filtrowanie, informacje, wybór ścieżki do zapisu i takie tam" TextWrapping="Wrap"/>
+                <TextBlock Text="..." TextWrapping="Wrap"/>
                 <Button Content="Save Selected" Command="{Binding SaveButtonClickedCommand}"/>
             </StackPanel>
         </Border>
